@@ -23,6 +23,7 @@ protocol MainViewPresenterProtocol: AnyObject {
     
     func fetchData()
     func setSelectedItem(at indexPath: IndexPath, isSelected: Bool)
+    
 }
 
 //MARK: - Presenter Implementation

@@ -131,6 +131,11 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.setSelected(false)
     }
     
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let selectedItemsCount = (collectionView.indexPathsForSelectedItems ?? []).count
+        return (selectedItemsCount < 6) && (selectedItemsCount >= 0)
+    }
+    
 }
 
 //MARK: - Private Methods
