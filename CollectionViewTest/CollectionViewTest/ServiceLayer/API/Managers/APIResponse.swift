@@ -23,13 +23,11 @@ extension APIResponse {
                 return try JSONSerialization.jsonObject(with: data, options: [])
             }
             
-            guard let jsonData = json["data"] else { return json }
-            
-            if let jsonData = jsonData as? [String: Any] {
-                if let key = key {
-                    return jsonData[key]
-                }
+            if let key = key {
+                return json[key]
             }
+            
+            guard let jsonData = json["data"] else { return json }
             
             return jsonData
         } catch {
